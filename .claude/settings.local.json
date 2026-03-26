@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(claude init:*)",
+      "WebSearch",
+      "WebFetch(domain:docs.coplay.dev)",
+      "WebFetch(domain:github.com)",
+      "Bash(claude mcp:*)",
+      "mcp__plugin_context7_context7__resolve-library-id",
+      "mcp__plugin_context7_context7__query-docs",
+      "Bash(git clone:*)",
+      "Read(//c/Users/saulp/mcp-unity/Server~/**)",
+      "Bash(npm install:*)",
+      "Bash(npm run:*)",
+      "Bash(cd C:\\\\Users\\\\saulp\\\\Test_project:*)",
+      "Bash(ls:*)",
+      "Bash(cd:*)"
+    ]
+  }
+}

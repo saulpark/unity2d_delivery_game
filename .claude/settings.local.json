@@ -14,7 +14,8 @@
       "Bash(npm run:*)",
       "Bash(cd C:\\\\Users\\\\saulp\\\\Test_project:*)",
       "Bash(ls:*)",
-      "Bash(cd:*)"
+      "Bash(cd:*)",
+      "Bash(git add:*)"
     ]
   }
 }

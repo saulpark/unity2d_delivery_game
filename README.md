@@ -16,7 +16,7 @@ A 2D top-down delivery game built with Unity 6, where players control a delivery
 - **Distance-Based Timing**: Delivery time calculated based on distance between driver and client
 - **Configurable Map**: Adjustable X × Y map dimensions
 - **Scoring System**: Immediate feedback with visual and audio cues
-- **Responsive Controls**: Smooth WASD/Arrow key movement with Unity's New Input System
+- **Responsive Controls**: Smooth WASD/Arrow key/Gamepad movement with Unity's New Input System
 
 ## 🛠️ Technical Specifications
 
@@ -83,16 +83,18 @@ Complete project documentation is available in the [`Documentation/`](Documentat
 
 ## 🎯 Development Status
 
-**Current Phase**: Project Setup and Documentation Complete
+**Current Phase**: Player Movement System Implemented
 
 **Estimated Total Development Time**: 63-82 hours
 - Scripts and Logic: 30-38 hours
 - Unity Editor Tasks: 33-44 hours
 
+**Completed**:
+- Player Movement System (`Assets/Car.cs`)
+
 **Next Steps**:
 1. Implement Map Configuration System
-2. Create Player Movement System
-3. Set up Client Location Management
+2. Set up Client Location Management
 
 ## 🤝 Development Approach
 
@@ -101,6 +103,35 @@ This project uses a hybrid development approach:
 - **Manual Unity Work**: Scene setup, prefabs, UI design, and visual polish
 
 Each feature includes clear separation of automated and manual tasks for efficient development.
+
+## 🎮 Player Controls
+
+Handled by `Assets/Car.cs` attached to the car `GameObject`.
+
+| Action | Keyboard | Gamepad |
+|--------|----------|---------|
+| Accelerate | W / Up Arrow | Left Stick Up |
+| Brake / Reverse | S / Down Arrow | Left Stick Down |
+| Steer Left | A / Left Arrow | Left Stick Left |
+| Steer Right | D / Right Arrow | Left Stick Right |
+
+### Inspector-Tunable Parameters (`Car.cs`)
+
+| Field | Default | Description |
+|-------|---------|-------------|
+| Max Speed | 10 | Top forward speed |
+| Acceleration | 8 | Rate of speed gain |
+| Deceleration | 8 | Coast-to-stop rate |
+| Brake Force | 15 | Hard-brake deceleration |
+| Turn Speed | 200 | Degrees per second |
+| Drag Coefficient | 3 | Velocity damping |
+
+### Scene Setup
+
+1. Create a `GameObject` for the car with a `Sprite Renderer` and `Rigidbody2D`.
+2. Attach `Assets/Car.cs` to it.
+3. The script sets `gravityScale = 0` and `freezeRotation = true` automatically in `Awake`.
+4. No `PlayerInput` component is required — input is polled directly via `InputSystem.GetDevice<>`.
 
 ## 📝 Game Design
 
